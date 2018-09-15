@@ -1,0 +1,2 @@
+cls
+D:\Arduino\arduino_1.8.3\hardware\tools\avr\bin\avrdude -CD:\Arduino\arduino_1.8.3\hardware\tools\avr\etc\avrdude.conf -v -patmega328p -carduino -PCOM3 -b115200 -D -Uflash:w:"D:\LLDevLab videos\Lec9\Code\main.hex":i
