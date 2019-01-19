@@ -1,0 +1,1 @@
+"D:\ARM_Toolchain\gcc-arm-none-eabi-6-2017-q2-update-win32\bin\arm-none-eabi-nm" tmp\main.elf > main_symbols.txt
