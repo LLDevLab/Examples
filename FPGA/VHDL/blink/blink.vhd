@@ -26,19 +26,19 @@ architecture blink_arch of blink is
 begin
 	-- VHDL позволяет в integer значениях использовать нижние подчеркивания для удобства
 	sec: timeout 	
-			-- На плате распаян кварц с частотой 50Mhz, для подсчета 1 с. нужно отсчитать 25 000 000 передних фронтов сигнала
+			-- На плате распаян кварц с частотой 50Mhz, для подсчета 0.5с нужно отсчитать 25 000 000 передних фронтов сигнала
 			generic map(25_000_000)
 			port map(clk, sec_s);
 			
 	led1: timeout
-			generic map(1)
+			generic map(1)					-- Светодиод мигает с частотой 0.5с * 2 (так как delay срабатывает только на передный фронт сигнала) = 1с  
 			port map(sec_s, led(0));
 
 	led2: timeout
-			generic map(2)
+			generic map(2)					-- Светодиод мигает с частотой 0.5с * 4 = 2с
 			port map(sec_s, led(1));
 			
 	led3: timeout
-			generic map(3)
+			generic map(3)					-- Светодиод мигает с частотой 0.5с * 6 = 3с
 			port map(sec_s, led(2));
 end blink_arch;
