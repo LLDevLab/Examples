@@ -10,7 +10,7 @@ void parse_input(char* input_str)
 	token = get_next_token();
 	result = stmt(token);
 
-	// Предположим, что пользовательский ввод всегда корректен, и нам не нужен механизм обработки ошибок
+	// РџСЂРµРґРїРѕР»РѕР¶РёРј, С‡С‚Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёР№ РІРІРѕРґ РІСЃРµРіРґР° РєРѕСЂСЂРµРєС‚РµРЅ, Рё РЅР°Рј РЅРµ РЅСѓР¶РµРЅ РјРµС…Р°РЅРёР·Рј РѕР±СЂР°Р±РѕС‚РєРё РѕС€РёР±РѕРє
 	printf("Result: %d\n", result);
 
 	return;
@@ -24,7 +24,7 @@ static int stmt(token_lexeme token)
 	{
 	case LP:
 	case NUM:
-		// expr может начинаться с открывающейся скобки или числа 			
+		// expr РјРѕР¶РµС‚ РЅР°С‡РёРЅР°С‚СЊСЃСЏ СЃ РѕС‚РєСЂС‹РІР°СЋС‰РµР№СЃСЏ СЃРєРѕР±РєРё РёР»Рё С‡РёСЃР»Р° 			
 		result = expr(token);
 	default:
 		break;
@@ -54,7 +54,7 @@ static int expr(token_lexeme token)
 			ret += expr(tmp_token);
 			break;
 		case RP:
-			// Если токен равен закрывающейся скобке, возвращаем его назад в строку
+			// Р•СЃР»Рё С‚РѕРєРµРЅ СЂР°РІРµРЅ Р·Р°РєСЂС‹РІР°СЋС‰РµР№СЃСЏ СЃРєРѕР±РєРµ, РІРѕР·РІСЂР°С‰Р°РµРј РµРіРѕ РЅР°Р·Р°Рґ РІ СЃС‚СЂРѕРєСѓ
 			set_token_index(get_token_index() - 1);
 		default:
 			break;
@@ -89,7 +89,7 @@ static int term(token_lexeme token)
 			break;
 		case PLUS:
 		case RP:
-			// Если токен равен плюсу или закрывающейся скобке, возвращаем его назад в строку
+			// Р•СЃР»Рё С‚РѕРєРµРЅ СЂР°РІРµРЅ РїР»СЋСЃСѓ РёР»Рё Р·Р°РєСЂС‹РІР°СЋС‰РµР№СЃСЏ СЃРєРѕР±РєРµ, РІРѕР·РІСЂР°С‰Р°РµРј РµРіРѕ РЅР°Р·Р°Рґ РІ СЃС‚СЂРѕРєСѓ
 			set_token_index(get_token_index() - 1);
 		default:
 			break;
@@ -114,7 +114,7 @@ static int fact(token_lexeme token)
 	case LP:
 		tmp_token = get_next_token();
 		ret = expr(tmp_token);
-		tmp_token = get_next_token();	// Считываем закрывающуюся скобку
+		tmp_token = get_next_token();	// РЎС‡РёС‚С‹РІР°РµРј Р·Р°РєСЂС‹РІР°СЋС‰СѓСЋСЃСЏ СЃРєРѕР±РєСѓ
 		break;
 	default:
 		break;
