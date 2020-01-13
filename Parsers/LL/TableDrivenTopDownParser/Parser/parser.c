@@ -30,7 +30,7 @@ int parse_input(char* input_str)
 	{
 		if (parse_stack[parse_stack_index] >= PLUS_ACT)
 		{
-			// Обработка действий			
+			// РћР±СЂР°Р±РѕС‚РєР° РґРµР№СЃС‚РІРёР№			
 			switch (parse_stack[parse_stack_index])
 			{
 			case PLUS_ACT:
@@ -53,7 +53,7 @@ int parse_input(char* input_str)
 		}
 		else if(parse_stack[parse_stack_index] >= STMT)
 		{
-			// Обработка nonterminal символов
+			// РћР±СЂР°Р±РѕС‚РєР° nonterminal СЃРёРјРІРѕР»РѕРІ
 			top_of_stack = parse_stack_pop();
 
 			parse_table_index = nonterminal_to_index(top_of_stack);
@@ -68,7 +68,7 @@ int parse_input(char* input_str)
 		}
 		else
 		{
-			// Обработка terminal символов
+			// РћР±СЂР°Р±РѕС‚РєР° terminal СЃРёРјРІРѕР»РѕРІ
 			top_of_stack = parse_stack_pop();
 
 			if (top_of_stack < 0)
@@ -212,7 +212,7 @@ static void init_todo_table(void)
 {
 	int i, j;
 
-	// Инициализирую элементы в обратном порядке
+	// РРЅРёС†РёР°Р»РёР·РёСЂСѓСЋ СЌР»РµРјРµРЅС‚С‹ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
 	for (i = 0; i < TODO_TABLE_ROW_LEN; i++)
 	{
 		for (j = 0; j < TODO_TABLE_COL_LEN; j++)
