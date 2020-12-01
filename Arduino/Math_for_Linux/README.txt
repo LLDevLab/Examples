@@ -1,1 +1,1 @@
-This is an example code for video, about debugging avr programms using gdb simulation.
+This is an example code for video, about debugging avr programs using gdb simulation.
