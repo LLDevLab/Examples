@@ -19,18 +19,6 @@ static void init(void)
 	uint16_t res16 = 0;
 	uint32_t res32 = 0;
 
-	uart_init();
-
 	res16 = mul_8bit_int(100, 9);
-	print_16bit_hex(res16);
-
-	uart_transmit(' ');
-
 	res32 = div_16bit_int(1589, 38);
-
-	print_16bit_hex(res32 >> 16);
-
-	uart_transmit(' ');
-
-	print_16bit_hex(res32);
 }
